@@ -83,6 +83,8 @@ enum procstate { UNUSED, USED, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
 
 // Per-process state
 struct proc {
+  int trace_mask;
+
   struct spinlock lock;
 
   // p->lock must be held when using these:
@@ -105,3 +107,5 @@ struct proc {
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
 };
+
+uint64 get_process_count(void);
