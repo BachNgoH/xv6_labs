@@ -45,3 +45,6 @@ void free(void*);
 // sysinfo.c
 struct sysinfo; 
 int sysinfo(struct sysinfo *);
+
+// trace.c
+int trace(int mask);
